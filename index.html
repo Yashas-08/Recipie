@@ -1,24 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>RecipeJS - Functional Cooking Companion</title>
-    <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recipe App</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<header>
-    <h1>🍳 RecipeJS</h1>
-    <p>Your Functional Cooking Companion</p>
-</header>
+  <header class="header">
+    <h1>🍽️ Recipe App</h1>
 
-<main>
-    <div id="recipe-container">
-        <!-- Recipe cards rendered by JS -->
+    <div class="search-wrapper">
+      <input
+        type="text"
+        id="search-input"
+        placeholder="Search recipes or ingredients..."
+      />
+      <button id="clear-search" class="hidden">✖</button>
     </div>
-</main>
+  </header>
 
-<script src="app.js"></script>
+  <main class="container">
+
+    <div class="controls">
+      <div class="filters">
+        <button data-filter="all" class="active">All</button>
+        <button data-filter="veg">Veg</button>
+        <button data-filter="non-veg">Non-Veg</button>
+        <button data-filter="favorites">❤️ Favorites</button>
+      </div>
+
+      <div class="sort">
+        <select id="sort-select">
+          <option value="default">Sort</option>
+          <option value="name">Name</option>
+        </select>
+      </div>
+    </div>
+
+    <p id="recipe-counter" class="counter"></p>
+
+    <section id="recipe-container" class="recipes"></section>
+
+  </main>
+
+  <script src="app.js"></script>
 </body>
 </html>
