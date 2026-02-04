@@ -1,4 +1,4 @@
-// Recipe data - Foundation for all 4 parts
+// Recipe data
 const recipes = [
     {
         id: 1,
@@ -66,10 +66,10 @@ const recipes = [
     },
 ];
 
-// DOM Selection
+// DOM selection
 const recipeContainer = document.querySelector('#recipe-container');
 
-// Function to create HTML for a single recipe card
+// Create recipe card
 const createRecipeCard = (recipe) => {
     return `
         <div class="recipe-card" data-id="${recipe.id}">
@@ -85,7 +85,7 @@ const createRecipeCard = (recipe) => {
     `;
 };
 
-// Function to render recipes to the DOM
+// Render recipes
 const renderRecipes = (recipesToRender) => {
     const recipeCardsHTML = recipesToRender
         .map(createRecipeCard)
@@ -94,10 +94,5 @@ const renderRecipes = (recipesToRender) => {
     recipeContainer.innerHTML = recipeCardsHTML;
 };
 
-// Initialize App
+// Initialize app
 renderRecipes(recipes);
-
-// Helpful logs (optional)
-console.log('Total recipes:', recipes.length);
-console.log('First recipe:', recipes[0]);
-console.log('Rendering complete!');
